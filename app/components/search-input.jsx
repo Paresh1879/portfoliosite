@@ -40,7 +40,7 @@ const UserSearch = ({ user }) => {
                     <input
                         placeholder="Search GitHub"
                         type="text"
-                        className="bg-gray-800 border border-gray-600 rounded-lg p-4 w-full text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                        className="bg-gray-800 border border-gray-600 rounded-lg p-4 w-full text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-400"
                         value={username}
                         onChange={handleUsernameChange}
                         onKeyDown={(e) => {
@@ -59,7 +59,7 @@ const UserSearch = ({ user }) => {
                 <>
                     {
                         userExists > 1 ?
-                            <span className="bg-linear-to-r from-purple-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500 text-transparent bg-clip-text px-6">
+                            <span className="bg-linear-to-r from-purple-400 to-blue-400 hover:from-pink-500 hover:to-yellow-500 text-transparent bg-clip-text px-6">
                                 <a href={`/?customUsername=${username}`}>
                                     Preview user: <span className="font-bold">{username}</span>
                                 </a>

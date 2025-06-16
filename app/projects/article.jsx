@@ -52,7 +52,7 @@ export const Article = async ({ project }) => {
             
             <Link href={appLink}>
                 <h2 className="z-20 text-xl font-medium duration-1000 lg:text-3xl text-zinc-200 group-hover:text-white font-display cursor-pointer" title={`Click to view the ${project.homepage ? 'app' : 'repo'}.`}>
-                    <span className="bg-linear-to-r from-purple-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500 text-transparent bg-clip-text">
+                    <span className="bg-linear-to-r from-purple-400 to-blue-400 hover:from-pink-500 hover:to-yellow-500 text-transparent bg-clip-text">
                         {project.name}
                     </span>
                 </h2>
@@ -69,7 +69,7 @@ export const Article = async ({ project }) => {
             </div>
             <div className="flex justify-between gap-2 items-center float-right mt-2 border-t-2 border-gray-700 border-opacity-50">
                 <span className="text-zinc-500 text-xs align-middle flex items-center gap-1" title="GitHub repository link.">
-                    <FaGithub className="w-4 h-4" /><Link href={project.html_url} className="hover:text-blue-800">{project.name}</Link>
+                    <FaGithub className="w-4 h-4" /><Link href={project.html_url} className="hover:text-blue-400">{project.name}</Link>
                 </span>
             </div>
         </article>

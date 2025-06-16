@@ -1,17 +1,9 @@
-import React, { Suspense } from "react";
+import React from "react";
 import { Navigation } from "../components/nav";
 import data from "../../data.json";
 import ProjectsComponent from "./projects";
 
-export default async function ProjectsPage(props) {
-    const searchParams = await props.searchParams;
-
-    const {
-        customUsername
-    } = searchParams;
-
-    const username = customUsername || process.env.GITHUB_USERNAME || data.githubUsername;
-
+export default function ProjectsPage() {
     return (
         <div className="relative pb-16">
             <Navigation />
@@ -21,14 +13,11 @@ export default async function ProjectsPage(props) {
                         Projects
                     </h2>
                     <p className="mt-4 text-zinc-400">
-                        {customUsername ? `${customUsername}'s projects` : data.description}
-                        {/* <pre>{JSON.stringify(vercelProjects.projects[1], null, 4)}</pre> */}
+                        Explore my work !
                     </p>
                 </div>
 
-                <Suspense fallback={<div className="text-lg text-zinc-500">Loading...</div>}>
-                    <ProjectsComponent username={username} />
-                </Suspense>
+                <ProjectsComponent />
             </div>
         </div>
     );

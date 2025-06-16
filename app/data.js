@@ -87,19 +87,27 @@ export const getVercelProjects = async () => {
         console.log('No Vercel token found - no projects will be shown.');
         return { projects: [] };
     }
-    console.log('Fetching Vercel projects');
-    console.time('getVercelProjects');
-    const res = await fetch('https://api.vercel.com/v9/projects', {
-        headers: { Authorization: `Bearer ${process.env.VC_TOKEN}` },
-        next: { revalidate: HOURS_12 }
-    });
-    console.timeEnd('getVercelProjects');
-    // eg. expired token.
-    if (!res.ok) {
-        console.error('Vercel API returned an error.', res.status, res.statusText);
+    
+    try {
+        console.log('Fetching Vercel projects');
+        console.time('getVercelProjects');
+        const res = await fetch('https://api.vercel.com/v9/projects', {
+            headers: { Authorization: `Bearer ${process.env.VC_TOKEN}` },
+            next: { revalidate: HOURS_12 }
+        });
+        console.timeEnd('getVercelProjects');
+        
+        // eg. expired token.
+        if (!res.ok) {
+            console.log('Vercel API returned an error.', res.status, res.statusText, '- continuing without Vercel projects');
+            return { projects: [] };
+        }
+        
+        return await res.json();
+    } catch (error) {
+        console.log('Error fetching Vercel projects:', error.message, '- continuing without Vercel projects');
         return { projects: [] };
     }
-    return res.json();
 };
 
 /** Cache revalidated every 12 hours. */

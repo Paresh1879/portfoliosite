@@ -9,10 +9,10 @@ const displayName = data.displayName || username;
 /** @type {import('next').Metadata} */
 export const metadata = {
 	title: {
-		default: [username, '\'s portfolio'].join(""),
-		template: "%s | " + data.displayName + "'s portfolio",
+		default: displayName + "'s Portfolio - AI/ML Engineer",
+		template: "%s | " + displayName + "'s Portfolio",
 	},
-	description: 'GitHub portfolio for ' + displayName,
+	description: data.description || 'AI/ML Engineer passionate about computer vision, NLP, and building scalable machine learning systems.',
 	robots: {
 		index: true,
 		follow: true,
@@ -25,11 +25,16 @@ export const metadata = {
 		},
 	},
 	icons: [
+			{
+				url: "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>👨🏽‍💻</text></svg>",
+				type: "image/svg+xml",
+				rel: "icon",
+			},
 		{
-			url: "/favicon.ico",
-			rel: "icon",
+			url: "/Image from iOS.jpg",
 			sizes: "any",
-			type: "image/svg+xml",
+			type: "image/jpeg",
+			rel: "icon",
 		},
 	]
 };

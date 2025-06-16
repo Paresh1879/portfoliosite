@@ -1,11 +1,76 @@
 {
-	"description": "My hobby projects, most of them are Next.js apps deployed to Vercel.",
-	"githubUsername": "octocat",
+	"description": "AI/ML Engineer passionate about computer vision, NLP, and building scalable machine learning systems. My portfolio showcases projects in image generation, MLOps, and cloud architecture.",
+	"bio": "Currently, I work on computer vision at Easel AI as a Machine Learning Engineer, where I build and optimize large-scale AI pipelines for image generation and facial reenactment. Revamped Infra and shipped core AI features for image generation for [App](https://apps.apple.com/us/app/easel-ai/id6448734086) & [API](https://replicate.com/easel). \n\nPrior to Easel, I worked at [Cognizant](https://www.cognizant.com/us/en) as a Software Engineer, where I worked on transitioning from monolithic to microservices architecture for scale, speed, and reliability. Built scalable cloud infrastructure with CI/CD, Kubernetes & IaC, streamlined deployments, improved reliability, and led internal teams while optimizing resources and enforcing security best practices.",
+	"githubUsername": "Paresh Natarajan",
 	"avatarUrl": "",
-	"displayName": "",
-	"email": "",
-	"projects": {
-		"blacklist": [],
-		"heroNames": []
+	"displayName": "Paresh Natarajan",
+	"email": "natarajan.paresh@gmail.com",
+	"location": "Cincinnati, OH",
+	"phone": "(513) 338-9703",
+	"linkedin": "linkedin.com/in/pareshns99/",
+	"education": {
+		"masters": {
+			"university": "University of Cincinnati, Carl H. Lindner College of Business",
+			"degree": "Master of Science, Information Systems",
+			"location": "Cincinnati, Ohio",
+			"graduation": "Dec 2024",
+			"role": "Graduate Teaching Assistant",
+			"certificate": "Graduate Certificate Program: Data Analytics"
+		},
+		"bachelors": {
+			"university": "SRM Institute of Science and Technology",
+			"degree": "Bachelor of Technology, Electronics and Communication Engineering",
+			"location": "Chennai, India",
+			"graduation": "May 2021",
+			"role": "Student Leader (AARUSH)"
+		}
+	},
+	"experience": [
+		{
+			"title": "Machine Learning Engineer",
+			"company": "Easel AI",
+			"companyUrl": "https://www.easelapps.ai/",
+			"location": "Remote",
+			"period": "Dec 2024 – Present",
+			"highlights": [
+				"Maintained and optimized image generation pipeline reducing latency",
+				"Improved image quality by developing custom ComfyUI nodes and leveraging LLMs",
+				"Led critical cloud migration ensuring high availability",
+				"Designed image captioning and indexing system boosting search relevancy by 30%",
+				"Deployed Prometheus and Grafana for system-wide observability",
+				"Engineered face-swapping pipeline with Mediapipe and PyTorch"
+			]
+		},
+		{
+			"title": "AI and MLOps Intern",
+			"company": "Easel AI",
+			"companyUrl": "https://www.easelapps.ai/", 
+			"location": "Remote",
+			"period": "Jul 2024 – Dec 2024",
+			"highlights": [
+				"Deployed Redis setup as core pub/sub layer for multi-cloud architecture",
+				"Built Cloud Function for shareable image previews",
+				"Automated CI/CD workflows using GitHub Actions",
+				"Deployed txt2image API endpoint for image generation pipeline"
+			]
+		},
+		{
+			"title": "Software Engineer",
+			"company": "Cognizant",
+			"location": "Chennai, India", 
+			"period": "Jul 2021 – Jul 2023",
+			"highlights": [
+				"Engineered automated CI/CD pipelines using Git, Terraform, Azure, Kubernetes",
+				"Reduced cloud costs by 35% through optimization strategies",
+				"Mentored 5 junior engineers on security best practices",
+				"Re-architected high-traffic portal (10K+ users/day) reducing API response times by 40%"
+			]
+		}
+	],
+	"skills": {
+		"programming": ["Python", "Rust", "JavaScript", "R", "SQL"],
+		"cloud": ["Azure", "AWS", "Docker", "Kubernetes", "Prometheus", "Grafana"],
+		"ml": ["PyTorch", "TensorFlow", "OpenCV", "Wandb", "ComfyUI", "Diffusers", "Transformers", "FlashAttention"],
+		"tools": ["Linux", "Redis", "Git", "Terraform"]
 	}
 }
