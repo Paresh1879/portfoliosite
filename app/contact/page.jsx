@@ -7,6 +7,7 @@ import { Navigation } from "../components/nav";
 import { Card } from "../components/card";
 import data from "../../data.json";
 import { getUser, getSocialAccounts } from "../data";
+import { Suspense } from "react";
 
 // TODO: make it edge once Turbopack supports it.
 export const runtime = 'nodejs';
@@ -75,7 +76,9 @@ export default async function Contacts(props) {
 
     return (
 		<div className=" bg-linear-to-tl from-zinc-900/0 via-zinc-900 to-zinc-900/0">
-			<Navigation />
+			<Suspense fallback={<div className="h-16 bg-zinc-900/0 border-b border-transparent" />}>
+				<Navigation />
+			</Suspense>
 			<div className="container flex items-center justify-center min-h-screen px-4 mx-auto">
 				<div className="grid w-full grid-cols-1 gap-8 mx-auto mt-32 sm:mt-0 sm:grid-cols-3 lg:gap-16">
 					{contacts.map((s) => {
