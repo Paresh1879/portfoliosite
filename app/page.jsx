@@ -1,47 +1,37 @@
 import Link from "next/link";
 import Image from "next/image";
-import React, { Suspense } from "react";
+import React from "react";
 import data from "../data.json";
-import { ProfileOrganizations } from "./components/orgs";
-import { RecentActivity } from "./components/recent-activity";
 import { Bio } from "./components/bio";
-import { getUser } from "./data";
 import LoadingIndicator from "./components/loading-indicator";
 import ParticlesBackground from "./components/particles-background";
 
 const navigation = [
 ];
 
-export default async function Home(props) {
-    const searchParams = await props.searchParams;
-
+export default function Home(props) {
     return (
-		<LandingComponent searchParams={searchParams} />
+		<LandingComponent />
 	)
 }
 
-const UserIcon = async ({ promise }) => {
-
-	const user = await promise;
-
+const UserIcon = () => {
 	return (
-		<Image alt='👨‍💻' width={100} height={100} src={user.avatar_url || data.avatarUrl} className="float-right rounded-full mx-4" />
+		<Image alt='👨‍💻' width={100} height={100} src={data.avatarUrl} className="float-right rounded-full mx-4" />
 	);
 };
 
-const UserText = async ({ promise }) => {
-
-	const user = await promise;
-
+const UserText = () => {
 	return (
-		<p>Hi, my name is {user.name || data.displayName}{'. '}{user.bio}</p>
+		<div>
+			<p>Hi, my name is Paresh Natarajan. Machine Learning Engineer. Computer Vision. Avid Sports lover. It's football not soccer.</p>
+			<p className="mt-2 text-white">I'm building stuff at <a href="https://www.easelapps.ai/" target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:text-blue-300 underline decoration-blue-400/30 hover:decoration-blue-300 transition-colors duration-200">Easel AI.</a></p>
+		</div>
 	);
 };
 
 const TryYourself = ({ customUsername }) => {
-
 	const href = customUsername ? '/' : '/search';
-
 	return <Link
 		href={href}
 		className="text-lg duration-500 text-zinc-500 hover:text-zinc-300 border-dashed p-2 rounded-sm border-2 border-zinc-500 hover:border-zinc-300"
@@ -52,11 +42,7 @@ const TryYourself = ({ customUsername }) => {
 	</Link>;
 };
 
-const LandingComponent = async ({ searchParams: { customUsername } }) => {
-
-	const username = customUsername || process.env.GITHUB_USERNAME || data.githubUsername;
-	const promise = getUser(username);
-
+const LandingComponent = () => {
 	return (
 		<div className="flex flex-col items-center justify-center w-screen min-h-screen overflow-y-auto bg-linear-to-tl from-black via-zinc-600/20 to-black">
 			<ParticlesBackground />
@@ -79,21 +65,15 @@ const LandingComponent = async ({ searchParams: { customUsername } }) => {
 
 			<h1 className="flex items-center z-10 text-4xl hover:scale-110 text-transparent duration-1000 cursor-default text-edge-outline animate-title font-display sm:text-6xl md:text-9xl whitespace-nowrap bg-clip-text bg-white p-5">
 				Paresh
-				<Suspense fallback={<p>Loading...</p>}>
-					<UserIcon promise={promise} />
-				</Suspense>
+				<UserIcon />
 			</h1>
 
 			<div className="hidden w-screen h-px animate-glow md:block animate-fade-right bg-linear-to-r from-zinc-300/0 via-zinc-300/50 to-zinc-300/0" />
 			<div className="my-2 text-center animate-fade-in">
 				<h2 className="text-lg text-zinc-500">
-					<Suspense fallback={<div className="w-full h-px min-h-28">Loading...</div>}>
-						<div className="w-full h-px min-h-28">
-							<UserText promise={promise} />
-							<ProfileOrganizations username={username} />
-							<RecentActivity username={username} />
-						</div>
-					</Suspense>
+					<div className="w-full h-px min-h-28">
+						<UserText />
+					</div>
 				</h2>
 			</div>
 
@@ -131,7 +111,7 @@ const LandingComponent = async ({ searchParams: { customUsername } }) => {
 						className="h-8 w-auto object-contain"
 					/>
 					<div className="text-left">
-						<div className="font-semibold text-lg group-hover:text-white transition-colors">						</div>
+						<div className="font-semibold text-lg group-hover:text-white transition-colors"> </div>
 					</div>
 				</a>
 			</div>

@@ -2,7 +2,7 @@
 	"description": "AI/ML Engineer passionate about computer vision, NLP, and building scalable machine learning systems. My portfolio showcases projects in image generation, MLOps, and cloud architecture.",
 	"bio": "Currently, I work on computer vision at Easel AI as a Machine Learning Engineer, where I build and optimize large-scale AI pipelines for image generation and facial reenactment. Revamped Infra and shipped core AI features for image generation for [App](https://apps.apple.com/us/app/easel-ai/id6448734086) & [API](https://replicate.com/easel). \n\nPrior to Easel, I worked at [Cognizant](https://www.cognizant.com/us/en) as a Software Engineer, where I worked on transitioning from monolithic to microservices architecture for scale, speed, and reliability. Built scalable cloud infrastructure with CI/CD, Kubernetes & IaC, streamlined deployments, improved reliability, and led internal teams while optimizing resources and enforcing security best practices.",
 	"githubUsername": "Paresh Natarajan",
-	"avatarUrl": "",
+	"avatarUrl": "/avatar.jpeg",
 	"displayName": "Paresh Natarajan",
 	"email": "natarajan.paresh@gmail.com",
 	"location": "Cincinnati, OH",
