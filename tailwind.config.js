@@ -1,7 +1,7 @@
 import defaultTheme from 'tailwindcss/defaultTheme';
 
 /** @type {import('tailwindcss').Config} */
-module.exports = {
+export default {
 	content: [
 		"./app/**/*.{js,jsx}",
 		// "./mdx-components.tsx",
